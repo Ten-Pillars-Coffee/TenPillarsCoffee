@@ -98,12 +98,12 @@ const {style, text, linkTo}=Astro.props;
 
 <style>
       .cta {
-        background-image: url(button.svg)
+        background-image: url(tilmeld_knap.svg)
         color: var(--white);
       }
 
       .cta:hover {
-        background-image: url(button_hover.svg)
+        background-image: url(tilmeld_knap_hover.svg)
         color: var(--brown);
         border: var(--brown);
       }
