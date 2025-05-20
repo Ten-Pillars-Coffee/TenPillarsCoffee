@@ -1,0 +1,92 @@
+---
+const { style, text, linkTo } = Astro.props;
+---
+
+<a class={style} href={linkTo}> {text} → </a>
+
+<style>
+  a {
+    color: var(--background-col);
+  }
+
+  a:hover {
+    color: var(--brown-col);
+  }
+
+  .cta-tilmeld {
+    background: url("../../public/assets/tilmeld_knap.svg") no-repeat center;
+    display: inline-block;
+    background-size: contain;
+    padding: 10px 30px;
+  }
+
+  .cta-tilmeld:hover {
+    background: url("../../public/assets/tilmeld_knap_hover.svg") no-repeat
+      center;
+    display: inline-block;
+    background-size: contain;
+    padding: 10px 30px;
+  }
+
+  .cta-vil_du_vide_mere {
+    background: url("../../public/assets/vil_du_vide_mere_knap.svg") no-repeat
+      center;
+    display: inline-block;
+    background-size: contain;
+    padding: 10px 20px;
+  }
+
+  .cta-vil_du_vide_mere:hover {
+    background: url("../../public/assets/vil_du_vide_mere_knap_hover.svg")
+      no-repeat center;
+    display: inline-block;
+    background-size: contain;
+    padding: 10px 20px;
+  }
+
+  .cta-tag_et_kig {
+    background: url("../../public/assets/tag_et_kig_knap.svg") no-repeat center;
+    display: inline-block;
+    background-size: contain;
+    padding: 20px 20px;
+  }
+
+  .cta-tag_et_kig:hover {
+    background: url("../../public/assets/tag_et_kig_knap_hover.svg") no-repeat
+      center;
+    display: inline-block;
+    background-size: contain;
+    padding: 20px 20px;
+  }
+
+  .cta-kom_med {
+    background: url("../../public/assets/se_events_knap.svg") no-repeat center;
+    display: inline-block;
+    background-size: contain;
+    padding: 20px 20px;
+  }
+
+  .cta-kom_med:hover {
+    background: url("../../public/assets/se_events_knap_hover.svg") no-repeat
+      center;
+    display: inline-block;
+    background-size: contain;
+    padding: 20px 20px;
+  }
+
+  .cta-bliv_frivillig {
+    background: url("../../public/assets/bliv_frivillig_knap.svg") no-repeat
+      center;
+    display: inline-block;
+    background-size: contain;
+    padding: 10px 40px;
+  }
+
+  .cta-bliv_frivillig:hover {
+    background: url("../../public/assets/bliv_frivillig_knap_hover.svg")
+      no-repeat center;
+    display: inline-block;
+    background-size: contain;
+    padding: 20px 20px;
+  }
+</style>
