@@ -5,6 +5,13 @@ import "../styles/generel.css";
 <header class="header">
   <div class="container">
     <a href="/"><img src="../assets/logo.svg" alt="logo" height="100" /></a>
+
+    <div class="burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+
     <nav>
       <ul class="nav">
         <li><a href="/#om_os">OM OS</a></li>
@@ -17,34 +24,106 @@ import "../styles/generel.css";
 </header>
 
 <style>
+  /* Mobil først */
+
   .header {
     background-color: var(--primary-col);
-    padding: 20px 0;
+    padding: 10px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
   }
-
   .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1400px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
   }
-
   .nav {
-    display: flex;
-    gap: 2rem;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--primary-col);
+    padding: 3rem 0;
+    gap: 1.5rem;
+    z-index: 1000;
     list-style: none;
-    padding: 0;
-    margin: 0;
   }
 
   nav a {
-    text-decoration: none;
     color: var(--background-col);
-    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .burger {
+    width: 40px;
+    height: 30px;
+    display: block;
+    margin-left: auto;
+    z-index: 1000;
+    cursor: pointer;
+    padding: 20px;
+  }
+
+  .burger .line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--background-col);
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translateY(9px);
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translateY(-9px);
+  }
+
+  @media (min-width: 1024px) {
+    .nav {
+      display: flex !important;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      position: static;
+      width: auto;
+      height: auto;
+      gap: 2rem;
+      background-color: transparent;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .nav li a {
+      white-space: nowrap;
+    }
+
+    .burger {
+      display: none;
+    }
   }
 </style>
+
+<script src="../js/brugermenu.js"></script>
