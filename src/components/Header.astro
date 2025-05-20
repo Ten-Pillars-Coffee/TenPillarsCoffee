@@ -1,0 +1,50 @@
+---
+import "../styles/generel.css";
+---
+
+<header class="header">
+  <div class="container">
+    <a href="/"><img src="../assets/logo.svg" alt="logo" height="100" /></a>
+    <nav>
+      <ul class="nav">
+        <li><a href="/#om_os">OM OS</a></li>
+        <li><a href="/#menu">MENU</a></li>
+        <li><a href="/#eventliste">EVENTS</a></li>
+        <li><a href="/#frivillig">BLIV FRIVILLIG</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    background-color: var(--primary-col);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .nav {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--background-col);
+    font-weight: bold;
+  }
+</style>
