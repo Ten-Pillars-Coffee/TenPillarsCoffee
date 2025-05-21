@@ -64,12 +64,12 @@ a {
 
 @media (min-width: 800px) {
   h1 {
-    font-size: 128px;
+    font-size: 90px;
   }
   h2 {
-    font-size: 62px;
+    font-size: 45px;
   }
   p {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
