@@ -1,0 +1,76 @@
+---
+import "../styles/generel.css";
+---
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-left">
+        <div class="footer-info">
+          <a href="https://www.instagram.com/ten_pillars_coffee/"
+            ><img src="../assets/insta.svg" alt="Instagram" height="40" /></a
+          >
+          <p>
+            Følg os på Instagram @TenPillarsCoffee for nyheder, events og
+            stemning.
+          </p>
+        </div>
+        <div class="footer-info">
+          <img src="../assets/email.svg" alt="Email" height="40" />
+          <p>
+            Vil du være med som frivillig? Så send os en mail fra din studiemail
+            på: Studieliv@KEA.dk eller send os en dm på instagram.
+          </p>
+        </div>
+        <div class="footer-info">
+          <img src="../assets/location.svg" alt="Location" height="50" />
+          <p>Find os i E-bygningen på KEA Guldbergsgade 29N.</p>
+        </div>
+      </div>
+      <div class="footer-right">
+        <p>
+          <strong>Sponsere: </strong>Prolog Coffee Spinchy shop rRebel Denmark
+        </p>
+        <p>
+          <strong>Åbningstider? </strong>Vores åbningstider varierer, følg
+          derfor med på vores instagram, hvor vi løende opdaterer.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--primary-col);
+    padding: 2rem 0;
+  }
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 0 3rem;
+  }
+
+  .footer-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-info img {
+    margin-top: 1rem;
+    height: 35px;
+  }
+  p {
+    color: var(--background-col);
+  }
+
+  @media (min-width: 1024px) {
+    .footer-info img {
+      margin-top: 2.5rem;
+      height: 50px;
+    }
+  }
+</style>
