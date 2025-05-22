@@ -31,35 +31,13 @@ h2 {
   font-size: 24px;
 }
 
-p,
-a {
+p {
   font-size: 16px;
 }
 
 a {
   text-decoration: none;
-}
-
-.cta {
-  color: var(--background-col);
-}
-
-.cta:hover {
-  color: var(--brown-col);
-}
-
-.cta-tilmeld {
-  background: url("../../public/assets/tilmeld_knap.svg") no-repeat center;
-  display: inline-block;
-  background-size: contain;
-  padding: 10px 20px;
-}
-
-.cta-tilmeld:hover {
-  background: url("../../public/assets/tilmeld_knap_hover.svg") no-repeat center;
-  display: inline-block;
-  background-size: contain;
-  padding: 10px 20px;
+  font-size: 12px;
 }
 
 @media (min-width: 800px) {

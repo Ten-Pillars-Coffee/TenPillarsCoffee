@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../styles/generel.css";
-
+import CTA from "../components/CTA.astro";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 
@@ -14,7 +14,23 @@ import Footer from "../components/Footer.astro";
   <h1>Forside</h1>
   <h2>Velkommen til Ten Pillars Coffee</h2>
   <p>Vi er en lille non-profit frivillig drevet kaffebar på KEA</p>
-  <a class="cta cta-tilmeld" href="">Tilmeld</a>
+  <CTA text="Tilmeld" linkTo="/eventliste" style="cta-tilmeld" />
+  <CTA
+    text="Vil du vide mere? "
+    linkTo="/eventliste"
+    style="cta-vil_du_vide_mere"
+  />
+  <CTA
+    text="Tag et kig på vores udvalg"
+    linkTo="/eventliste"
+    style="cta-tag_et_kig"
+  />
+  <CTA
+    text="Kom med til vores næste event"
+    linkTo="/eventliste"
+    style="cta-kom_med"
+  />
+  <CTA text="Bliv frivillig" linkTo="/eventliste" style="cta-bliv_frivillig" />
 </Layout>
 <Footer />
 
