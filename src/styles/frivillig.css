@@ -1,0 +1,26 @@
+.grid_1_1 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  padding: 3rem;
+  place-items: center;
+}
+h1,
+p {
+  color: var(--brown-col);
+}
+
+p {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.grid_1_1 img {
+  width: 100%;
+  height: auto;
+  max-width: 700px; /* Never exceed this */
+}
+@media (min-width: 800px) {
+  .grid_1_1 img {
+    width: 80%; /* Relative to container */
+    max-width: 800px; /* Larger cap */
+  }
+}
