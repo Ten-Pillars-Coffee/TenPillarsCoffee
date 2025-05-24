@@ -1,4 +1,27 @@
 ---
 import Header from "../components/Header.astro";
 import "../styles/generel.css";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import CTA from "../components/CTA.astro";
 ---
+
+<Layout>
+  <Header />
+  <div class="grid_1_1">
+    <img src="/frivillig.webp" alt="frivillig" />
+    <h1>Bliv en del af holdet</h1>
+    <p>
+      At være frivillig i vores kaffebar er mere end en vagt – det er en chance
+      for at skabe fællesskab, lære at mestre en espressomaskine og få en
+      hyggelig pause fra studiet.  "Man føler sig hurtigt som en del af noget
+      større," siger en af vores frivillige. "Det overraskede mig, hvor
+      afslappet det er – det er ligeså meget hygge som arbejde. Og man møder
+      folk fra hele skolen, man ellers aldrig ville have snakket med."  Lyst til
+      at prøve? Vi lover gratis kaffe, gode snakke og et team, der glæder sig
+      til at møde dig.
+    </p>
+    <CTA style="cta-bliv_frivillig" text="Bliv Frivillig" linkTo="/" />
+  </div>
+  <Footer />
+</Layout>
