@@ -11,27 +11,322 @@ import Footer from "../components/Footer.astro";
 
 <Layout>
   <Header />
-  <h1>Forside</h1>
-  <h2>Velkommen til Ten Pillars Coffee</h2>
-  <p>Vi er en lille non-profit frivillig drevet kaffebar på KEA</p>
-  <CTA text="Tilmeld" linkTo="/eventliste" style="cta-tilmeld" />
-  <CTA
-    text="Vil du vide mere? "
-    linkTo="/eventliste"
-    style="cta-vil_du_vide_mere"
-  />
-  <CTA
-    text="Tag et kig på vores udvalg"
-    linkTo="/eventliste"
-    style="cta-tag_et_kig"
-  />
-  <CTA
-    text="Kom med til vores næste event"
-    linkTo="/eventliste"
-    style="cta-kom_med"
-  />
-  <CTA text="Bliv frivillig" linkTo="/eventliste" style="cta-bliv_frivillig" />
+  <section class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="/public/nybroll.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay">
+      <h2>velkommen til</h2>
+      <h1>Ten Pillars Coffee</h1>
+    </div>
+  </section>
+  <section class="grid_section">
+    <div class="container">
+      <div class="grid_1-1">
+        <div class="tekst-cta">
+          <h2>Vores menu</h2>
+          <p>
+            Find din kop kaffe og få fornyet energi til resten af skoledagen.
+          </p>
+          <CTA
+            text="Tag et kig på vores udvalg"
+            linkTo="/eventliste"
+            style="cta-tag_et_kig"
+          />
+        </div>
+        <div class="img">
+          <img src="/public/kaffe_forside.webp" alt="kaffe" width="200" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="grid_section">
+    <div class="container">
+      <div class="grid_1-1">
+        <div class="img">
+          <img src="/public/brettspil.webp" alt="brætspil" width="200" />
+        </div>
+        <div class="tekst-cta">
+          <h2>Events</h2>
+          <p>
+            Vores events er for dig, der vil have en pause med lidt mere på
+            menuen.
+          </p>
+          <CTA
+            text="Kom med til vores næste event"
+            linkTo="/eventliste"
+            style="cta-kom_med"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="grid_section">
+    <div class="container">
+      <div class="grid_1-1">
+        <div class="tekst-cta">
+          <h2>Bliv en del af holdet</h2>
+          <p>
+            Vores kaffebar drives af frivillige – måske er det dig, der skal
+            være den næste?
+          </p>
+          <CTA
+            text="Bliv frivillig"
+            linkTo="/eventliste"
+            style="cta-bliv_frivillig"
+          />
+        </div>
+        <div class="img">
+          <img src="/public/frivillig.webp" alt="frivillig" width="200" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="grid_section">
+    <div class="container">
+      <div class="grid_1-1">
+        <div class="img">
+          <img src="/public/tpc.webp" alt="tpc" width="200" />
+        </div>
+        <div class="tekst-cta">
+          <h2>Om os og vores sponsere</h2>
+          <p>
+            Vi er en frivilligdrevet kaffebar skabt af studerende – med støtte
+            fra lokale ildsjæle og sponsorer, der tror på fællesskabet.
+          </p>
+          <CTA
+            text="Vil du vide mere? "
+            linkTo="/eventliste"
+            style="cta-vil_du_vide_mere"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
-<Footer />
+<section class="faq">
+  <h2>Ofte stillede spørgsmål</h2>
+  <div class="faq-item">
+    <button class="faq-question">
+      <span class="icon">
+        <img src="/public/assets/kaffebøn.svg" alt="kaffebønne" width="50 " />
+      </span>
+      <p>Hvornår har kaffebaren åbent?</p>
+      <span class="arrow">
+        <img src="/public/assets/pildrop.png" alt="pil" width="30" />
+      </span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        Vi har åbent mandag til fredag fra kl. 8.30 til 15.00 – dog kan
+        åbningstiderne variere lidt afhængigt af de frivilliges skemaer. Følg
+        med på Instagram for aktuelle tider.
+      </p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">
+      <span class="icon">
+        <img src="/public/assets/kaffebøn.svg" alt="kaffebønne" width="50 " />
+      </span>
+      <span><p>Hvor ligger kaffebaren?</p></span>
+      <span class="arrow">
+        <img src="/public/assets/pildrop.png" alt="pil" width="30" />
+      </span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        Kaffebaren ligger midt på KEA - i E bygningen. Se videon nedenfor, så
+        viser vi vejen.
+      </p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">
+      <span class="icon">
+        <img src="/public/assets/kaffebøn.svg" alt="kaffebønne" width="50 " />
+      </span>
+      <span><p>Hvad koster en kop kaffe?</p></span>
+      <span class="arrow">
+        <img src="/public/assets/pildrop.png" alt="pil" width="30" />
+      </span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        En almindelig kop kaffe koster 10 kr., og specialkaffer (som latte eller
+        cappuccino) koster 20 kr. Al overskud går direkte til vores frivillige
+        fællesskab og events.
+      </p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">
+      <span class="icon">
+        <img src="/public/assets/kaffebøn.svg" alt="kaffebønne" width="50 " />
+      </span>
+      <span><p>Kan man tage sin kaffe med?</p></span>
+      <span class="arrow">
+        <img src="/public/assets/pildrop.png" alt="pil" width="30" />
+      </span>
+    </button>
+    <div class="faq-answer">
+      <p>Ja! Du er meget velkommen til at tage kaffen med.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">
+      <span class="icon">
+        <img src="/public/assets/kaffebøn.svg" alt="kaffebønne" width="50 " />
+      </span>
+      <span><p>Hvordan bliver jeg frivillig?</p></span>
+      <span class="arrow">
+        <img src="/public/assets/pildrop.png" alt="pil" width="30" />
+      </span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        Send os en DM på Instagram eller en mail fra din studiemail til
+        Studieliv@KEA.dk .
+      </p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">
+      <span class="icon">
+        <img src="/public/assets/kaffebøn.svg" alt="kaffebønne" width="50 " />
+      </span>
+      <span><p>Hvilken kaffe bruger I?</p></span>
+      <span class="arrow">
+        <img src="/public/assets/pildrop.png" alt="pil" width="30" />
+      </span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        Vi får vores kaffe fra Prolog Kaffe, som leverer bønnerne bag vores
+        bryg. Vi får det overskudsprodukt, der ikke kan bruges i deres
+        almindelige sortiment. Det betyder, at vi serverer en unik blanding af
+        høj kvalitet, kendt som "staff coffee" - en smagfuld kaffe, som ellers
+        ville være gået til spilde. Takket være Prolog kaffe kan vi byde på
+        bæredygtig kaffe med karakter og omtanke - og det er vi stolte af.
+      </p>
+    </div>
+  </div>
+</section>
 
-<style></style>
+<style>
+  h2,
+  p {
+    color: var(--brown-col);
+  }
+
+  p {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .container {
+    padding: 0 5.8rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 3rem 0 3rem 0;
+  }
+
+  .grid_section {
+    width: 100%;
+    padding: 3rem 0;
+  }
+
+  .grid_section:nth-of-type(odd) {
+    background-color: var(--secondary-col);
+  }
+
+  .hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--background-col);
+    text-align: center;
+  }
+
+  .hero-overlay h2 {
+    color: var(--background-col);
+  }
+
+  .faq {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem 3rem;
+  }
+
+  .faq-item {
+    border-bottom: 2px solid var(--brown-col);
+    margin-bottom: 1rem;
+  }
+
+  .faq-question {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    color: var(--brown-col);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+  }
+
+  .faq-question p {
+    font-size: 30px;
+  }
+
+  .faq-question .icon {
+    margin-right: 0.5rem;
+  }
+
+  .faq-answer {
+    display: none;
+    padding: 0.5rem 0 1rem 2rem;
+  }
+
+  .faq-answer p {
+    font-size: 23px;
+  }
+
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+
+  .faq-item.active .arrow {
+    transform: rotate(180deg);
+  }
+
+  .arrow {
+    margin-left: auto;
+  }
+
+  @media (min-width: 1024px) {
+  }
+</style>
+
+<script src="../js/dropdown.js"></script>
