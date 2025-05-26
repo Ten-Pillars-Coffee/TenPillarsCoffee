@@ -1,0 +1,148 @@
+---
+const { event } = Astro.props;
+
+const date = new Date(event.dato);
+const formattedDate = date.toLocaleDateString("da-DK", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
+const dayFormatted = String(date.getDate()).padStart(2, "0");
+const monthFormatted = date.toLocaleDateString("da-DK", {
+  month: "short",
+});
+---
+
+<!-- <a href={`/events/${event.slug}`}> -->
+<article>
+  <div class="image-side">
+    <img src={`${event.img}`} alt="" />
+  </div>
+  <div class="content">
+    <h2>{event.name}</h2>
+    <p>{event.short_description}</p>
+    <div class="dato-row">
+      <p>Dato: {dayFormatted}. {monthFormatted}</p>
+      <div class="cirkel"></div>
+    </div>
+  </div>
+</article>
+
+<style>
+  * {
+    transition: all 0.3s ease;
+  }
+
+  article {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    aspect-ratio: 407 / 234;
+    width: 100%;
+    max-width: 407px;
+    border-radius: 70px;
+    overflow: hidden;
+    margin: auto;
+    margin-bottom: 50px;
+    background-color: var(--secondary-col);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  article:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background-color: var(--primary-col);
+    cursor: pointer;
+  }
+  article:hover .content {
+    background-color: var(--primary-col);
+    color: var(--secondary-col);
+  }
+  article:hover .cirkel {
+    background-image: url("/assets/grøn_cirkle_mobil_hover.svg");
+  }
+
+  /* Image only takes 60% of the card */
+  .image-side {
+    flex: 0 0 60%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+
+  .image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Content overlaps the image slightly and creates a trapezoid */
+  .content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 65%; /* Slightly overlaps the image */
+    height: 100%;
+    background-color: var(--secondary-col);
+    color: var(--brown-col);
+    padding: 1rem 1rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    z-index: 2;
+
+    /* Trapezoid shape */
+    clip-path: polygon(13% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  .dato-row {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  .cirkel {
+    background: url("/assets/grøn_cirkle_mobil.svg") no-repeat center;
+    background-size: contain;
+    width: 45px; /* Adjust to your icon's size */
+    height: 45px;
+    flex-shrink: 0;
+    margin-right: 0.5rem;
+  }
+  .content p:nth-of-type(1) {
+    margin-bottom: 0.2rem; /* reduce spacing below short_description */
+  }
+
+  @media (min-width: 800px) {
+    article {
+      max-width: 1000px;
+      aspect-ratio: 1000 / 487; /* Keep same ratio */
+    }
+    .cirkel {
+      width: 100px;
+      height: 100px;
+      margin-left: 0;
+    }
+    h2 {
+      margin-left: 50px;
+      margin-bottom: 0;
+    }
+    .content {
+      gap: 0.4rem;
+    }
+    .content p {
+      margin-left: 30px;
+    }
+    .dato-row {
+      padding-bottom: 20px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+</style>

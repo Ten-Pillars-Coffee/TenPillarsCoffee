@@ -1,4 +1,39 @@
 ---
+//@ts-nocheck
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import Eventcard from "../components/Eventcard.astro";
 import "../styles/generel.css";
+const url = "https://mvmtoovowlbdpxbkwaih.supabase.co/rest/v1/events";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im12bXRvb3Zvd2xiZHB4Ymt3YWloIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcxMzg0OTksImV4cCI6MjA2MjcxNDQ5OX0.JP9QOL67SLwSIPbVZjYg_X4JSB5pDxbYDA2Gpk8VaXg ";
+
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
+
+const data = await fetch(url, options).then((res) => res.json());
+console.log(data);
 ---
+
+<Layout>
+  <Header />
+  <h1>Eventliste</h1>
+  <p>Vores events er for dig, der vil have en pause med lidt mere på menuen.</p>
+  <main>
+    {data.map((event) => <Eventcard {event} />)}
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  h1,
+  p {
+    color: var(--brown-col);
+    text-align: center;
+    margin-bottom: 70px;
+  }
+</style>
