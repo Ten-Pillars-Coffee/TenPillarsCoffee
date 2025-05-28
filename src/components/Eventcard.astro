@@ -13,26 +13,28 @@ const monthFormatted = date.toLocaleDateString("da-DK", {
 });
 ---
 
-<!-- <a href={`/events/${event.slug}`}> -->
-<article>
-  <div class="image-side">
-    <img src={`${event.img}`} alt="" />
-  </div>
-  <div class="content">
-    <h2>{event.name}</h2>
-    <p>{event.short_description}</p>
-    <div class="dato-row">
-      <p>Dato: {dayFormatted}. {monthFormatted}</p>
-      <div class="cirkel"></div>
+<a href={`/events/${event.slug}`}>
+  <article>
+    <div class="image-side">
+      <img src={`${event.img}`} alt="" />
     </div>
-  </div>
-</article>
-
+    <div class="content">
+      <h2>{event.name}</h2>
+      <p>{event.short_description}</p>
+      <div class="dato-row">
+        <p>Dato: {dayFormatted}. {monthFormatted}</p>
+        <div class="cirkel"></div>
+      </div>
+    </div>
+  </article>
+</a>
 <style>
   * {
     transition: all 0.3s ease;
   }
-
+  h2 {
+    margin-bottom: 0;
+  }
   article {
     position: relative;
     display: flex;

@@ -89,4 +89,28 @@ const { style, text, linkTo } = Astro.props;
     background-size: contain;
     padding: 10px 40px;
   }
+
+  @media (min-width: 800px) {
+    .cta-tilmeld,
+    .cta-tilmeld:hover {
+      padding: 20px 40px;
+    }
+    .cta-kom_med,
+    .cta-kom_med:hover {
+      padding: 25px 35px;
+    }
+
+    .cta-bliv_frivillig,
+    .cta-bliv_frivillig:hover {
+      padding: 15px 40px;
+    }
+
+    .cta-vil_du_vide_mere,
+    .cta-vil_du_vide_mere:hover {
+      padding: 15px 30px;
+    }
+    a {
+      font-size: 24px;
+    }
+  }
 </style>
