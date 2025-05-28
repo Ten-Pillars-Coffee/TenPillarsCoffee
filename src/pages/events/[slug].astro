@@ -1,0 +1,159 @@
+---
+//@ts-nocheck
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import CTA from "../../components/CTA.astro";
+import "../../styles/generel.css";
+
+export async function getStaticPaths() {
+  //   const response = await fetch('...');
+  //   const data = await response.json();
+  const url = "https://mvmtoovowlbdpxbkwaih.supabase.co/rest/v1/events";
+  const key =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im12bXRvb3Zvd2xiZHB4Ymt3YWloIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcxMzg0OTksImV4cCI6MjA2MjcxNDQ5OX0.JP9QOL67SLwSIPbVZjYg_X4JSB5pDxbYDA2Gpk8VaXg ";
+
+  const options = {
+    headers: {
+      apikey: key,
+    },
+  };
+
+  const data = await fetch(url, options).then((res) => res.json());
+  console.log(data);
+
+  return data.map((event) => {
+    return {
+      params: { slug: event.slug },
+      props: { event },
+    };
+  });
+}
+
+const { event } = Astro.props;
+
+const date = new Date(event.dato);
+const formattedDate = date.toLocaleDateString("da-DK", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
+const dayFormatted = String(date.getDate()).padStart(2, "0");
+const monthFormatted = date.toLocaleDateString("da-DK", {
+  month: "short",
+});
+
+const formatTime = (timeString) => {
+  const time = new Date(`1970-01-01T${timeString}`);
+  const hours = String(time.getHours()).padStart(2, "0");
+  const minutes = String(time.getMinutes()).padStart(2, "0");
+  return `${hours}.${minutes}`;
+};
+
+const formattedStart = formatTime(event.start);
+const formattedEnd = formatTime(event.end);
+---
+
+<Layout>
+  <Header />
+  <main>
+    <div class="img-wrapper">
+      <img src={event.img} />
+    </div>
+    <div class="date-wrapper">
+      <p>Dato: {dayFormatted}. {monthFormatted}</p>
+      <p>Tid: {formattedStart}-{formattedEnd}</p>
+    </div>
+    <h1>{event.name}</h1>
+    <h2>Velkommen og nyd din kaffe</h2>
+    <div class="p-wrapper">
+      <p>{event.description}</p>
+    </div>
+    <div class="cta-wrapper">
+      <CTA style="cta-tilmeld" text="Tilmeld" linkTo="/" />
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  main img {
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+  main {
+    margin: 20px 40px;
+  }
+  .cta-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+  h1 {
+    text-align: center;
+  }
+
+  h1,
+  h2,
+  p {
+    color: var(--brown-col);
+  }
+
+  .img-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .img-wrapper img {
+    max-width: 100%;
+    height: auto;
+    max-width: 500px;
+  }
+
+  @media (min-width: 800px) {
+    main {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      column-gap: 50px;
+    }
+    h1 {
+      grid-row: 1;
+      grid-column: 1 / span 2;
+    }
+    h2 {
+      grid-row: 2;
+      grid-column: 1;
+      padding-bottom: 20px;
+      margin-top: 0;
+    }
+    .p-wrapper {
+      grid-row: 3 / span 3;
+      grid-column: 1;
+    }
+
+    .img-wrapper {
+      grid-row: 2 / span 2;
+      grid-column: 2;
+    }
+    .date-wrapper {
+      grid-row: 4;
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+    }
+    .date-wrapper p {
+      margin: 0;
+      padding-top: 0.5rem;
+    }
+    .cta-wrapper {
+      grid-row: 5;
+      grid-column: 2;
+      display: flex;
+      justify-content: center;
+    }
+  }
+</style>

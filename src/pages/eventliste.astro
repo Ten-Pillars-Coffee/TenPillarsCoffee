@@ -21,9 +21,12 @@ console.log(data);
 
 <Layout>
   <Header />
-  <h1>Eventliste</h1>
-  <p>Vores events er for dig, der vil have en pause med lidt mere på menuen.</p>
+
   <main>
+    <h1>Eventliste</h1>
+    <p>
+      Vores events er for dig, der vil have en pause med lidt mere på menuen.
+    </p>
     {data.map((event) => <Eventcard {event} />)}
   </main>
   <Footer />
@@ -34,6 +37,9 @@ console.log(data);
   p {
     color: var(--brown-col);
     text-align: center;
-    margin-bottom: 70px;
+    margin: 0 10px 70px 10px;
+  }
+  main {
+    margin: 20px;
   }
 </style>
