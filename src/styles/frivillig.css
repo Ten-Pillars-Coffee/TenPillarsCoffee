@@ -1,6 +1,6 @@
 .grid_1_1 {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: 1fr;
   padding: 3rem;
   place-items: center;
 }
@@ -9,18 +9,19 @@ p {
   color: var(--brown-col);
 }
 
-p {
+.grid_1_1 p {
   padding-left: 1rem;
   padding-right: 1rem;
+  line-height: 1.5;
 }
 .grid_1_1 img {
   width: 100%;
   height: auto;
-  max-width: 700px; /* Never exceed this */
+  max-width: 700px;
 }
 @media (min-width: 800px) {
-  .grid_1_1 img {
-    width: 80%; /* Relative to container */
-    max-width: 800px; /* Larger cap */
+  .grid_1_1 img,
+  .grid_1_1 p {
+    max-width: 1000px;
   }
 }
