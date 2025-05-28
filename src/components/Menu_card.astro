@@ -1,0 +1,88 @@
+---
+//@ts-nocheck
+const url =
+  "https://miasroombwsalbozzhlq.supabase.co/rest/v1/menu_items?select=*";
+
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1pYXNyb29tYndzYWxib3p6aGxxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcxMzkwOTIsImV4cCI6MjA2MjcxNTA5Mn0.enfEpy_oft4g8I6xcVGIZ-HTOktiQixJtWTzGpbwg0M";
+
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
+
+const data = await fetch(url, options).then((res) => res.json());
+
+console.log(data);
+---
+
+<style>
+  .menu-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    padding: 2rem;
+    place-self: center;
+    place-items: center;
+    align-items: stretch;
+    gap: 70px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-col);
+    border-radius: 4rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .card-body {
+    padding: 2rem;
+  }
+
+  .card p {
+    margin: 0.5rem 0;
+    color: var(--brown-col);
+  }
+
+  .price {
+    color: var(--brown-col);
+    margin-top: 0.5rem;
+  }
+
+  @media (min-width: 800px) {
+    .menu-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .card {
+      width: 450px;
+      height: 700px;
+    }
+  }
+</style>
+
+<div class="menu-grid">
+  {
+    data.map((item) => (
+      <article class="card">
+        <img src={item.menu_img} alt={item.name} />
+        <div class="card-body">
+          <h2 class="price"> Pris: {item.price} kr</h2>
+          <p>
+            <strong>{item.name}</strong>
+          </p>
+          <p>{item.description}</p>
+        </div>
+      </article>
+    ))
+  }
+</div>
