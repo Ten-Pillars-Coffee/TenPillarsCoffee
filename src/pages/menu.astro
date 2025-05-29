@@ -8,19 +8,17 @@ import Footer from "../components/Footer.astro";
 
 <Layout>
   <Header />
-  <h1>Menukort</h1>
-  <p>
-    Find din kop kaffe og få fornyet energi til resten af skoledagen.<p>
-      <MenuCard />
-      <Footer />
-    </p>
 
-    <style>
-      h1,
-      p {
-        color: var(--brown-col);
-        place-self: center;
-      }
-    </style>
-  </p>
+  <h1>Menukort</h1>
+  <p>Find din kop kaffe og få fornyet energi til resten af skoledagen.</p>
+  <MenuCard />
+  <Footer />
 </Layout>
+
+<style>
+  h1,
+  p {
+    color: var(--brown-col);
+    text-align: center;
+  }
+</style>
