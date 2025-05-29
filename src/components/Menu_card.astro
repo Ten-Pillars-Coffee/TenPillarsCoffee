@@ -21,12 +21,10 @@ console.log(data);
   .menu-grid {
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px));
     padding: 2rem;
-    place-self: center;
-    place-items: center;
-    align-items: stretch;
-    gap: 70px;
+    justify-items: center;
+    margin-bottom: 4rem;
   }
 
   .card {
@@ -37,6 +35,7 @@ console.log(data);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     height: 100%;
+    max-width: 100%;
   }
 
   .card img {
@@ -61,7 +60,10 @@ console.log(data);
 
   @media (min-width: 800px) {
     .menu-grid {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 450px);
+      place-self: center;
+      gap: 3rem;
+      column-gap: 5rem;
     }
     .card {
       width: 450px;
