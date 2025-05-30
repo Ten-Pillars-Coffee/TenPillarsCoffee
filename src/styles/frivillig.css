@@ -10,8 +10,9 @@ p {
 }
 
 .grid_1_1 p {
-  padding-left: 40rem;
-  padding-right: 40rem;
+  /* padding-left: 40rem;
+  padding-right: 40rem; */
+  margin: auto;
   line-height: 1.5;
 }
 .grid_1_1 img {
