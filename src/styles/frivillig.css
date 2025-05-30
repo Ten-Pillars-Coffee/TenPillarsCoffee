@@ -24,4 +24,10 @@ p {
   .grid_1_1 img {
     max-width: 40%;
   }
+  .grid_1_1 p {
+    max-width: 60%;
+  }
+  h1 {
+    font-size: 5cqw;
+  }
 }
