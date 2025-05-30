@@ -10,8 +10,8 @@ p {
 }
 
 .grid_1_1 p {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 40rem;
+  padding-right: 40rem;
   line-height: 1.5;
 }
 .grid_1_1 img {
@@ -20,8 +20,7 @@ p {
   max-width: 700px;
 }
 @media (min-width: 800px) {
-  .grid_1_1 img,
-  .grid_1_1 p {
-    max-width: 35%;
+  .grid_1_1 img {
+    max-width: 40%;
   }
 }
