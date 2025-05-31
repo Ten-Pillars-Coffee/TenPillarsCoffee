@@ -1,3 +1,7 @@
+---
+const { titel } = Astro.props;
+---
+
 <!doctype html>
 <html lang="da">
   <head>
@@ -12,7 +16,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-    <title>Ten Pillars Coffee</title>
+    <title>Ten Pillars Coffee - {titel}</title>
   </head>
   <body>
     <slot />
