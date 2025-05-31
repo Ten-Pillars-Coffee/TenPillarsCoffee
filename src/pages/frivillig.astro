@@ -28,14 +28,16 @@ import CTA from "../components/CTA.astro";
       Lyst til at prøve? Vi lover gratis kaffe, gode snakke og et team, der
       glæder sig til at møde dig.
     </p>
-    <CTA
-      class="button"
-      style="cta-bliv_frivillig"
-      text="Bliv Frivillig"
-      linkTo="/"
-    />
+    <div class="cta_wrapper">
+      <CTA
+        class="button"
+        style="cta-bliv_frivillig"
+        text="Bliv Frivillig"
+        linkTo="/"
+      />
+    </div>
+  </div>
+  <div class="footer-container">
+    <Footer />
   </div>
 </Layout>
-<div class="footer-container">
-  <Footer />
-</div>
