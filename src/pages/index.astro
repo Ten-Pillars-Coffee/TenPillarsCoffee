@@ -29,13 +29,18 @@ import Footer from "../components/Footer.astro";
             Find din kop kaffe og få fornyet energi til resten af skoledagen.
           </p>
           <CTA
-            text="Tag et kig på vores udvalg"
+            text="Se vores udvalg"
             linkTo="/eventliste"
             style="cta-tag_et_kig"
           />
         </div>
         <div class="img">
-          <img src="/kaffe_forside.webp" alt="kaffe" width="200" />
+          <img
+            class="menu_billede"
+            src="/kaffe_forside.webp"
+            alt="kaffe"
+            width="200"
+          />
         </div>
       </div>
     </div>
@@ -43,7 +48,7 @@ import Footer from "../components/Footer.astro";
   <section class="grid_section">
     <div class="container">
       <div class="grid_1-1">
-        <div class="img">
+        <div class="img2">
           <img src="/brettspil.webp" alt="brætspil" width="200" />
         </div>
         <div class="tekst-cta">
@@ -53,7 +58,7 @@ import Footer from "../components/Footer.astro";
             menuen.
           </p>
           <CTA
-            text="Kom med til vores næste event"
+            text="Se vores events"
             linkTo="/eventliste"
             style="cta-kom_med"
           />
@@ -65,7 +70,7 @@ import Footer from "../components/Footer.astro";
     <div class="container">
       <div class="grid_1-1">
         <div class="tekst-cta">
-          <h2>Bliv en del af holdet</h2>
+          <h2 class="frivillig">Bliv en del af holdet</h2>
           <p>
             Vores kaffebar drives af frivillige – måske er det dig, der skal
             være den næste?
@@ -85,12 +90,12 @@ import Footer from "../components/Footer.astro";
   <section class="grid_section">
     <div class="container">
       <div class="grid_1-1">
-        <div class="img">
+        <div class="img2">
           <img src="/tpc.webp" alt="tpc" width="200" />
         </div>
         <div class="tekst-cta">
-          <h2>Om os og vores sponsere</h2>
-          <p>
+          <h2 class="om_os">Om os og sponsere</h2>
+          <p class="om_os">
             Vi er en frivilligdrevet kaffebar skabt af studerende – med støtte
             fra lokale ildsjæle og sponsorer, der tror på fællesskabet.
           </p>
@@ -228,9 +233,9 @@ import Footer from "../components/Footer.astro";
   }
 
   .container {
-    padding: 0 5.8rem;
-    max-width: 1000px;
-    margin: 0 auto;
+    /* padding: 0 5.8rem; */
+    max-width: 800px;
+    margin: 0 20px 0 20px;
   }
   .grid_1-1 {
     display: grid;
@@ -240,6 +245,8 @@ import Footer from "../components/Footer.astro";
   }
 
   .grid_section {
+    display: flex;
+    justify-content: center;
     width: 100%;
     padding: 3rem 0;
   }
@@ -328,6 +335,20 @@ import Footer from "../components/Footer.astro";
     margin-left: auto;
   }
 
+  .om_os {
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 1rem;
+  }
+  .frivillig {
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 1rem;
+  }
+  .img {
+    width: fit-content;
+  }
+
   @media (min-width: 1024px) {
     .img img {
       width: 75%;
@@ -336,13 +357,29 @@ import Footer from "../components/Footer.astro";
 
     .img {
       display: flex;
-      justify-content: center;
+      justify-content: end;
       align-items: center;
     }
 
     .faq {
       max-width: 900px;
       padding: 3rem 2rem;
+    }
+    .container {
+      /* padding: 0 5.8rem; */
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .img2 img {
+      width: 75%;
+      align-items: center;
+    }
+
+    .img2 {
+      display: flex;
+      justify-content: start;
+      align-items: center;
     }
   }
 </style>
