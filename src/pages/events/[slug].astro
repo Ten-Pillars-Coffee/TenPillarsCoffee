@@ -60,20 +60,23 @@ const formattedEnd = formatTime(event.end);
     <div class="img-wrapper">
       <img src={event.img} />
     </div>
-    <div class="date-wrapper">
-      <p>Dato: {dayFormatted}. {monthFormatted}</p>
-      <p>Tid: {formattedStart}-{formattedEnd}</p>
-    </div>
+
     <h1>{event.name}</h1>
     <h2>Velkommen og nyd din kaffe</h2>
     <div class="p-wrapper">
       <p>{event.description}</p>
-    </div>
-    <div class="cta-wrapper">
-      <CTA style="cta-tilmeld" text="Tilmeld" linkTo="/" />
+      <div class="date-wrapper">
+        <p>Dato: {dayFormatted}. {monthFormatted}</p>
+        <p>Tid: {formattedStart}-{formattedEnd}</p>
+      </div>
+      <div class="cta-wrapper">
+        <CTA style="cta-tilmeld" text="Tilmeld" linkTo="/" />
+      </div>
     </div>
   </main>
-  <Footer />
+  <div class="footer-wrapper">
+    <Footer />
+  </div>
 </Layout>
 
 <style>
@@ -111,6 +114,9 @@ const formattedEnd = formatTime(event.end);
     height: auto;
     max-width: 500px;
   }
+  .footer-wrapper {
+    margin-top: 5rem;
+  }
 
   @media (min-width: 800px) {
     main {
@@ -131,6 +137,7 @@ const formattedEnd = formatTime(event.end);
       margin-top: 0;
     }
     .p-wrapper {
+      display: grid;
       grid-row: 3 / span 3;
       grid-column: 1;
     }
@@ -140,8 +147,8 @@ const formattedEnd = formatTime(event.end);
       grid-column: 2;
     }
     .date-wrapper {
-      grid-row: 4;
-      grid-column: 2;
+      grid-row: 2;
+      grid-column: 1;
       display: flex;
       flex-direction: column;
     }
@@ -150,10 +157,9 @@ const formattedEnd = formatTime(event.end);
       padding-top: 0.5rem;
     }
     .cta-wrapper {
-      grid-row: 5;
-      grid-column: 2;
-      display: flex;
-      justify-content: center;
+      grid-row: 3;
+      grid-column: 1;
+      place-self: end start;
     }
   }
 </style>
