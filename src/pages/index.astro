@@ -28,11 +28,7 @@ import Footer from "../components/Footer.astro";
           <p>
             Find din kop kaffe og få fornyet energi til resten af skoledagen.
           </p>
-          <CTA
-            text="Se vores udvalg"
-            linkTo="/eventliste"
-            style="cta-tag_et_kig"
-          />
+          <CTA text="Se vores udvalg" linkTo="/menu" style="cta-tag_et_kig" />
         </div>
         <div class="img">
           <img
@@ -77,7 +73,7 @@ import Footer from "../components/Footer.astro";
           </p>
           <CTA
             text="Bliv frivillig"
-            linkTo="/eventliste"
+            linkTo="/frivillig"
             style="cta-bliv_frivillig"
           />
         </div>
@@ -101,7 +97,7 @@ import Footer from "../components/Footer.astro";
           </p>
           <CTA
             text="Vil du vide mere? "
-            linkTo="/eventliste"
+            linkTo="/om_os"
             style="cta-vil_du_vide_mere"
           />
         </div>
@@ -219,6 +215,7 @@ import Footer from "../components/Footer.astro";
       </div>
     </div>
   </section>
+  <Footer />
 </Layout>
 
 <style>
